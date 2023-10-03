@@ -1,0 +1,12 @@
+runtime: python39  # Use the appropriate Python version
+
+entrypoint: gunicorn -b :$PORT final:app  # Adjust the entrypoint as needed
+
+instance_class: F2
+
+handlers:
+  - url: /static
+    static_dir: static
+
+  - url: /.*
+    script: auto

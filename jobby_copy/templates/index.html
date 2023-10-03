@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<!--
+	Fractal by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Fractal by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="content">
+					<h1><a href="#">Jobbly</a></h1>
+					<p>Tired of filling out apps that won't go anywhere?<br />
+					Jobbly is the website for you! </p>
+					<ul class="actions">
+						<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
+					</ul>
+				</div>
+				<div class="image phone"><div class="inner"><img src="{{ url_for('static', filename='images/hired.jpg') }}" alt="Screen Image"></div></div>
+			</header>
+			<section id="input-section" class="wrapper">
+				<div class="inner">
+					<h2>The Magic</h2>
+					<form id="combined-input-form" action="/" method="POST">
+						<label for="user_input">Enter your LinkedIn URL! Jobbly will do the rest :) Make sure to scroll down after the refresh!</label>
+						<input type="text" id="user_input" name="user_input" placeholder="Type the URL to your LinkedIn in the format: https://www.linkedin.com/in/linkedin-username" />
+			
+						<label for="user_input2">Enter the type of position you are looking for (Ex: Summer 2024 internship)</label>
+						<input type="text" id="user_input2" name="user_input2" placeholder="Type the type of position you are looking for" />
+
+						<label for="user_input3">Select the number of job openings you are looking for:</label>
+						<select id="user_input3" name="user_input3">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							
+						</select>
+			
+						<button type="submit" class="button primary">Submit</button>
+
+					</form>
+				</div>
+			</section>
+			<section class="result-section">
+				<h1>Result</h1>
+				<pre style="overflow-wrap: break-word;">{{ result|safe }}</pre>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper style2 special">
+				<header class="major">
+					<h2>How does it work?<br />
+					</h2>
+				</header>
+				<p class="Explain" style="font-size: 18px;"> <!-- Adjust the font-size here -->
+					Web application that scrapes job information from your LinkedIn using Prospeo API and scoures the internet for current openings using Metaphor API. 
+					Jobbly then uses OpenAI's LLM API to determine which jobs are the most relevant to your past experiences and skills. It then displays the openings, where to find them, and why the AI thinks you are a match!
+				</p>
+				<p class="Explain2" style="font-size: 18px;"> <!-- Adjust the font-size here -->
+					
+					No more applying to hundreds of job openings that don't fit your skills and experiences; 
+					Jobbly does all the hard work for you!
+					</p>
+				<ul class="icons major">
+					<li><div class="image"><img src="{{ url_for('static', filename='images/metaphor.jpg') }}" alt="Screen Image" style="width: 100px; height: 100px;"></div></li>
+					<li><div class="image"><img src="{{ url_for('static', filename='images/openai.jpg') }}" alt="Screen Image" style="width: 100px; height: 100px;"></div></li>
+					<li><div class="image"><img src="{{ url_for('static', filename='images/prospeo.jpg') }}" alt="Screen Image" style="width: 100px; height: 100px;"></div></li>
+				</ul>
+
+		<!-- Two -->
+		<section id="two" class="wrapper style2 special">
+			<header class="major">
+				<h2>Why and How did I do it?<br />
+				</h2>
+			</header>
+			<p class="Explain" style="font-size: 24px;"> <!-- Adjust the font-size here -->
+				I have always struggled with applying to jobs that are relevant to my skills and past experiences. There are so many out there and difficult to find. Jobbly was my solution!
+				Jobbly is my interview project for the company Metaphor, where the assignment was to create something using Metaphor API within 3 days,
+				taking no more than 1-3 hours. 
+			</p>
+			<p class="Explain2" style="font-size: 24px;"> <!-- Adjust the font-size here -->
+				My project took roughly 2.5 hours from start to finish and I did it one sitting on Oct 1st Sunday Night 2023.
+				</p>
+			
+		</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<p class="copyright">&copy; Hrishikesh Ingale. Website Credits: <a href="http://html5up.net">HTML5 UP</a></p>
+			</footer>
+
+		<!-- Scripts -->
+		
+			<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+			
+			<script src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+	</body>
+</html>
